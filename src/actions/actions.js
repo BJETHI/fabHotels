@@ -1,3 +1,4 @@
+import fetch from 'isomorphic-unfetch'
 import { FETCH_REDDIT_DATA_SUCCESS } from './constants';
 
 export const fetchRedditData = key => {

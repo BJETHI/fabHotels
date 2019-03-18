@@ -5,7 +5,6 @@ import RedditImage from '../RedditImage/RedditImage';
 class CategorySlide extends Component {
     render() {
         const { slideData } = this.props;
-        console.log(slideData);
         const {
             title,
             preview: imageData,

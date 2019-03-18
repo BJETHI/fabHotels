@@ -1,26 +1,31 @@
 import React, { Component } from 'react'
-import {Provider} from 'react-redux';
+import { Provider } from 'react-redux';
 import Head from 'next/head';
-
-import store from '../../Store/store';
+import { connect } from 'react-redux'
 
 //Components
 import Layout from '../../organisms/Layout/Layout';
 import CategorySlides from '../../organisms/CategorySlides/CategorySlides';
 
+import { fetchRedditData } from '../../actions/actions';
+
 class RedditPage extends Component {
+    static async getInitialProps({ reduxStore }) {
+        reduxStore.dispatch(fetchRedditData('pics'));
+        return {};
+    }
+
     render() {
         return (
-            <Provider store={store}>
-                  <Head>
+            <div>
+                <Head>
                     <title>Reddit Page</title>
                 </Head>
                 <Layout>
                     <CategorySlides />
                 </Layout>
-            </Provider>
+            </div>
         )
     }
 }
-
-export default RedditPage;
+export default connect()(RedditPage)

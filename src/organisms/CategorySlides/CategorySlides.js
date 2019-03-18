@@ -7,10 +7,6 @@ import { fetchRedditData } from '../../actions/actions';
 
 class CategorySlides extends Component {
 
-    componentDidMount() {
-        this.props.dispatch(fetchRedditData('alternativeart'));
-    }
-
     renderCategorySlide = (child) => {
         const { data } = child;
         return <CategorySlide slideData={data} />;
