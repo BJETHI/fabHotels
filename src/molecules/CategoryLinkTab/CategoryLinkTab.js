@@ -9,15 +9,28 @@ class CategoryLinkTab extends Component {
             'selected': categoryKey === selectedCategory,
         });
         return (
-            <li onClick={() => fetchCategoryData(categoryKey)} className={`${tabClass} col-xs-3 col-md-2`}>
+            <li onClick={() => fetchCategoryData(categoryKey)} className={`${tabClass}`}>
                 {value}
                 < style jsx > {`
             li {
                 display: inline-block;
                 cursor: pointer;
+                margin: 0 8px;
+                font-weight: bold;
             }
-            .selected{
-                background: #FF0000;
+
+            li:hover {
+                color: #9400D3;
+            }
+
+            .selected {
+                background: #1e90ff;
+            }
+
+            @media(min-width:1024px) {
+                li {
+                    padding: 10px;
+                }
             }
             `}</style >
             </li >
