@@ -2,12 +2,13 @@ import React, { Component } from 'react'
 
 class RedditImage extends Component {
     render() {
-        const { imageData: { images } } = this.props;
+        const { imageData } = this.props;
+        const images = imageData && imageData.images;
         let imageUrl = images && images[0].source.url;
-        imageUrl = imageUrl.replace(/amp;/g, '');
+        imageUrl = imageUrl && imageUrl.replace(/amp;/g, '');
         return (
             <div className='col-xs-12'>
-                {imageUrl && <img src={imageUrl} alt='' />}
+                {imageUrl ? <img src={imageUrl} alt='post-image' /> : <img src='/static/images/unavailable-image.png' alt='post-image-fallback' />}
                 <style jsx>{`
                 img { 
                     width: 100%;

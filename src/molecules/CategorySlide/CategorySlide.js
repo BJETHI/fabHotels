@@ -17,7 +17,7 @@ class CategorySlide extends Component {
             <div className='row'>
                 <div className="col-xs-12 col-md-6 col-md-offset-3 slide-wrapper">
                     {title && <h3 className='post-title'>{title}</h3>}
-                    {imageData && <RedditImage imageData={imageData} />}
+                    <RedditImage imageData={imageData} />
                     <SlideMetaInfo views={views} comments={comments} subscribers={subscribers} />
                     {author && <p className='post-author'>Authored by : {author}</p>}
                 </div>
