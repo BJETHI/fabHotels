@@ -1,14 +1,17 @@
 import { FETCH_REDDIT_DATA, FETCH_REDDIT_DATA_SUCCESS } from '../actions/constants';
 
 
-const initialState = {};
+const initialState = {
+    loader: true,
+};
 
 const loadRedditData = (state, action) => {
     const { key, categoryData: { data } } = action.data;
     state = {
         ...state,
         categoryData: data,
-        selectedCategory: key
+        selectedCategory: key,
+        loader: false,
     }
     return state;
 }

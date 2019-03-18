@@ -25,7 +25,7 @@ class CategorySlide extends Component {
 
                 <style jsx>{`
                 .slide-wrapper {
-                    border: 1px solid #000;
+                    border: 1px solid #cfab3a;
                     border-radius: 5px;
                     padding: 20px;
                     background: #212c5d;
