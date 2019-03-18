@@ -2,8 +2,6 @@ import React, { Component } from 'react'
 
 import CategorySlide from '../../molecules/CategorySlide/CategorySlide';
 
-import { fetchRedditData } from '../../actions/actions';
-
 class CategorySlides extends Component {
 
     renderCategorySlide = (child) => {

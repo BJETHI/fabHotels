@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import CategoryLinkTab from '../CategoryLinkTab/CategoryLinkTab';
 
-import { fetchRedditData } from '../../actions/actions';
-
 class NavBar extends Component {
 
     renderCategoryTab = (category) => {

@@ -1,5 +1,5 @@
 import fetch from 'isomorphic-unfetch'
-import { FETCH_REDDIT_DATA_SUCCESS } from './constants';
+import { FETCH_REDDIT_DATA_SUCCESS, ENABLE_LOADER } from './constants';
 
 export const fetchRedditData = key => {
     return async function (dispatch) {
@@ -17,4 +17,8 @@ export const fetchRedditData = key => {
 export const fetchRedditDataSuccess = data => ({
     type: FETCH_REDDIT_DATA_SUCCESS,
     data,
+});
+
+export const initialiseLoaderAction = data => ({
+    type: ENABLE_LOADER,
 });

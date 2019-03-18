@@ -1,4 +1,4 @@
-import { FETCH_REDDIT_DATA, FETCH_REDDIT_DATA_SUCCESS } from '../actions/constants';
+import { FETCH_REDDIT_DATA_SUCCESS, ENABLE_LOADER } from '../actions/constants';
 
 
 const initialState = {
@@ -16,10 +16,20 @@ const loadRedditData = (state, action) => {
     return state;
 }
 
+const enableLoader = (state) => {
+    state = {
+        ...state,
+        loader: true,
+    }
+    return state;
+}
+
 const categoryReducer = (state = initialState, action) => {
     switch (action.type) {
         case FETCH_REDDIT_DATA_SUCCESS:
             return loadRedditData(state, action);
+        case ENABLE_LOADER:
+            return enableLoader(state);
         default:
             return state;
     }

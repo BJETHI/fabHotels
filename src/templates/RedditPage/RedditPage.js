@@ -7,12 +7,13 @@ import { connect } from 'react-redux'
 import Layout from '../../organisms/Layout/Layout';
 import CategorySlides from '../../organisms/CategorySlides/CategorySlides';
 
-import { fetchRedditData } from '../../actions/actions';
+import { fetchRedditData, initialiseLoaderAction } from '../../actions/actions';
 
 class RedditPage extends Component {
 
     fetchCategoryData = (key) => {
-        const { fetchCategory } = this.props;
+        const { fetchCategory, initialiseLoader } = this.props;
+        initialiseLoader();
         fetchCategory(key);
     }
 
@@ -40,6 +41,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => {
     return {
         fetchCategory: (key) => dispatch(fetchRedditData(key)),
+        initialiseLoader: () => dispatch(initialiseLoaderAction()),
     }
 }
 
