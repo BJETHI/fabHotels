@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import LazyLoad from 'react-lazyload';
 class RedditImage extends Component {
     render() {
         const { imageData, altText } = this.props;
@@ -8,7 +8,11 @@ class RedditImage extends Component {
         imageUrl = imageUrl && imageUrl.replace(/amp;/g, '');
         return (
             <div className='col-xs-12'>
-                {imageUrl ? <img src={imageUrl} alt={altText} /> : <img src='/static/images/unavailable-image.png' alt={altText} />}
+                {imageUrl ?
+                    <LazyLoad height={300} debounce={false}>
+                        <img src={imageUrl} alt={altText} />
+                    </LazyLoad> :
+                    <img src='/static/images/unavailable-image.png' alt={altText} />}
                 <style jsx>{`
                 img { 
                     width: 100%;
