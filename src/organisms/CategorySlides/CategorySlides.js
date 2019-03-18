@@ -4,9 +4,9 @@ import CategorySlide from '../../molecules/CategorySlide/CategorySlide';
 
 class CategorySlides extends Component {
 
-    renderCategorySlide = (child) => {
-        const { data } = child;
-        return <CategorySlide slideData={data} />;
+    renderCategorySlide = (child, index) => {
+        const { data, kind } = child;
+        return <CategorySlide slideData={data} key={`${kind}${index}`} />;
     }
 
     render() {
@@ -14,8 +14,8 @@ class CategorySlides extends Component {
         const children = categoryData && categoryData.children;
         return (
             <div>
-                {loader && <div className='loader-wrapper'><img src='/static/images/loader.gif' alt='' /></div>}
-                {children && children.map(child => this.renderCategorySlide(child))}
+                {loader && <div className='loader-wrapper'><img src='/static/images/loader.gif' alt='loader-image' /></div>}
+                {children && children.map((child, index) => this.renderCategorySlide(child, index))}
                 <style jsx>{`
                     div {
                         background: #4c5787;
