@@ -4,7 +4,7 @@ class RedditImage extends Component {
     render() {
         const { imageData: { images } } = this.props;
         let imageUrl = images && images[0].source.url;
-        imageUrl = imageUrl.replace('amp;', '');
+        imageUrl = imageUrl.replace(/amp;/g, '');
         return (
             <div className='col-xs-12'>
                 {imageUrl && <img src={imageUrl} alt='' />}
