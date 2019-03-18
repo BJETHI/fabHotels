@@ -10,10 +10,6 @@ import CategorySlides from '../../organisms/CategorySlides/CategorySlides';
 import { fetchRedditData } from '../../actions/actions';
 
 class RedditPage extends Component {
-    static async getInitialProps({ reduxStore }) {
-        reduxStore.dispatch(fetchRedditData('pics'));
-        return {};
-    }
 
     render() {
         return (

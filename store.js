@@ -6,7 +6,7 @@ import rootReducer from './src/reducers';
 
 const initialState = {};
 
-export const initializeStore = () =>
+export const initializeStore = (initialState = initialState) =>
     createStore(
         rootReducer,
         initialState,
