@@ -4,7 +4,6 @@ import { FETCH_REDDIT_DATA, FETCH_REDDIT_DATA_SUCCESS } from '../actions/constan
 const initialState = {};
 
 const loadRedditData = (state, action) => {
-    console.log(action);
     const { key, categoryData: { data } } = action.data;
     state = {
         ...state,

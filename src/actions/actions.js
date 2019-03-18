@@ -1,7 +1,6 @@
 import { FETCH_REDDIT_DATA_SUCCESS } from './constants';
 
 export const fetchRedditData = key => {
-    console.log(key);
     return dispatch => {
         fetch(`https://www.reddit.com/r/${key}.json`)
             .then(response => response.json())
