@@ -1,11 +1,14 @@
 # fabHotels
 Single Page App Assignment
 
-##npm Modules used
+## Commands
+npm run dev : to run the dev server
+
+## npm Modules used
   classnames : A simple JavaScript utility for conditionally joining classNames together.
 
-###Styling Solution Used : 
+### Styling Solution Used : 
 Styled JSX Supported in NEXT.js by default
 
-###TODO Tasks:
+### TODO Tasks:
 Perform initial fetch for the preloading from the server
