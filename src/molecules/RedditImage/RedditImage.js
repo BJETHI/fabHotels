@@ -11,7 +11,20 @@ class RedditImage extends Component {
                 <style jsx>{`
                 img { 
                     width: 100%;
-                    height: 400px;
+                    height: 200px;
+                    border-radius: 10%;
+                }
+
+                @media(min-width: 768px){
+                    img {
+                        height: 300px;
+                    }
+                }
+
+                @media(min-width: 1024px){
+                    img {
+                        height: 400px;
+                    }
                 }
                 `}</style>
             </div>

@@ -24,7 +24,6 @@ class NavBar extends Component {
                 {categories.map(category => this.renderCategoryTab(category))}
                 <style jsx>{`
                 ul {
-                    color: #cfab3a;
                     font-size: 10px;
                     background: #212c5d;
                     position: sticky;
