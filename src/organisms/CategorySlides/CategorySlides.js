@@ -22,6 +22,12 @@ class CategorySlides extends Component {
         return (
             <div>
                 {children && children.map(child => this.renderCategorySlide(child))}
+                <style jsx>{`
+                    div {
+                        background: #4c5787;
+                    }
+                `}
+                </style>
             </div>
         )
     }
