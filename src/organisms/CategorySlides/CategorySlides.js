@@ -3,7 +3,13 @@ import { connect } from 'react-redux'
 
 import CategorySlide from '../../molecules/CategorySlide/CategorySlide';
 
+import { fetchRedditData } from '../../actions/actions';
+
 class CategorySlides extends Component {
+
+    componentDidMount() {
+        this.props.dispatch(fetchRedditData('alternativeart'));
+    }
 
     renderCategorySlide = (child) => {
         const { data } = child;
