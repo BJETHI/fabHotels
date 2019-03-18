@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Head from 'next/head';
 import Header from '../../molecules/Header/Header';
 import NavBar from '../../molecules/NavBar/NavBar';
 import Footer from '../../molecules/Footer/Footer';
@@ -11,6 +12,10 @@ export default class Layout extends Component {
 
         return (
             <div>
+                <Head>
+                    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+                    <link rel='stylesheet' href='/static/styles/flexboxgrid.css' />
+                </Head>
                 <Header />
                 <NavBar categories={categories} />
                 {this.props.children}
