@@ -11,6 +11,13 @@ import { fetchRedditData, initialiseLoaderAction } from '../../actions/actions';
 
 class RedditPage extends Component {
 
+    static async getInitialProps({ reduxStore }) {
+        const response = await reduxStore.dispatch(fetchRedditData('alternativeart'));
+        return {
+            categoryData: response,
+        };
+    }
+
     fetchCategoryData = (key) => {
         const { fetchCategory, initialiseLoader } = this.props;
         initialiseLoader();
