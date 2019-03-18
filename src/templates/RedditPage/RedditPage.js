@@ -32,7 +32,7 @@ class RedditPage extends Component {
                     <title>Reddit Page</title>
                 </Head>
                 <Layout selectedCategory={selectedCategory} fetchCategoryData={this.fetchCategoryData}>
-                    <CategorySlides categoryData={categoryData} loader={loader} />
+                    <CategorySlides categoryData={categoryData} loader={loader} selectedCategory={selectedCategory} />
                 </Layout>
             </div>
         )

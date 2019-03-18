@@ -4,7 +4,7 @@ import RedditImage from '../RedditImage/RedditImage';
 
 class CategorySlide extends Component {
     render() {
-        const { slideData } = this.props;
+        const { slideData, altTextProp } = this.props;
         const {
             title,
             preview: imageData,
@@ -17,7 +17,7 @@ class CategorySlide extends Component {
             <div className='row'>
                 <div className="col-xs-12 col-md-6 col-md-offset-3 slide-wrapper">
                     {title && <h3 className='post-title'>{title}</h3>}
-                    <RedditImage imageData={imageData} />
+                    <RedditImage imageData={imageData} key={altTextProp} altText={`${altTextProp}image`} />
                     <SlideMetaInfo views={views} comments={comments} subscribers={subscribers} />
                     {author && <p className='post-author'>Authored by : {author}</p>}
                 </div>

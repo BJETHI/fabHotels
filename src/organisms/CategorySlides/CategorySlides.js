@@ -5,8 +5,9 @@ import CategorySlide from '../../molecules/CategorySlide/CategorySlide';
 class CategorySlides extends Component {
 
     renderCategorySlide = (child, index) => {
+        const { selectedCategory } = this.props;
         const { data, kind } = child;
-        return <CategorySlide slideData={data} key={`${kind}${index}`} />;
+        return <CategorySlide slideData={data} key={`${kind}${selectedCategory}${index}`} altTextProp={`${selectedCategory}${index}`} />;
     }
 
     render() {
