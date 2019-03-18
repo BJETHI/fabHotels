@@ -9,7 +9,7 @@ import { categories } from '../../mockdata';
 
 export default class Layout extends Component {
     render() {
-
+        const { selectedCategory, fetchCategoryData } = this.props;
         return (
             <div>
                 <Head>
@@ -17,7 +17,7 @@ export default class Layout extends Component {
                     <link rel='stylesheet' href='/static/styles/flexboxgrid.css' />
                 </Head>
                 <Header />
-                <NavBar categories={categories} />
+                <NavBar categories={categories} selectedCategory={selectedCategory} fetchCategoryData={fetchCategoryData} />
                 {this.props.children}
                 <Footer />
                 <style jsx global>{`

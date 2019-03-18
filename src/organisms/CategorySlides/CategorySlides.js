@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
 
 import CategorySlide from '../../molecules/CategorySlide/CategorySlide';
 
@@ -37,9 +36,4 @@ class CategorySlides extends Component {
     }
 }
 
-const mapStateToProps = state => ({
-    categoryData: state.categoryData.categoryData,
-    loader: state.categoryData.loader,
-});
-
-export default connect(mapStateToProps, null)(CategorySlides)
+export default CategorySlides;

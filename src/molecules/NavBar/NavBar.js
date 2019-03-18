@@ -1,20 +1,14 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux';
 import CategoryLinkTab from '../CategoryLinkTab/CategoryLinkTab';
 
 import { fetchRedditData } from '../../actions/actions';
 
 class NavBar extends Component {
 
-    fetchCategoryData = (key) => {
-        const { fetchCategory } = this.props;
-        fetchCategory(key);
-    }
-
     renderCategoryTab = (category) => {
-        const { selectedCategory } = this.props;
+        const { selectedCategory, fetchCategoryData } = this.props;
         const { key, value } = category;
-        return <CategoryLinkTab categoryKey={key} value={value} fetchCategoryData={this.fetchCategoryData} key={key} selectedCategory={selectedCategory} />;
+        return <CategoryLinkTab categoryKey={key} value={value} fetchCategoryData={fetchCategoryData} key={key} selectedCategory={selectedCategory} />;
     }
 
     render() {
@@ -43,14 +37,4 @@ class NavBar extends Component {
     }
 }
 
-const mapStateToProps = state => ({
-    selectedCategory: state.categoryData.selectedCategory,
-});
-
-const mapDispatchToProps = dispatch => {
-    return {
-        fetchCategory: (key) => dispatch(fetchRedditData(key)),
-    }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(NavBar);
+export default NavBar;

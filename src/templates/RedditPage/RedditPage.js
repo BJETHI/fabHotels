@@ -11,17 +11,36 @@ import { fetchRedditData } from '../../actions/actions';
 
 class RedditPage extends Component {
 
+    fetchCategoryData = (key) => {
+        const { fetchCategory } = this.props;
+        fetchCategory(key);
+    }
+
     render() {
+        const { categoryData, loader, selectedCategory } = this.props;
         return (
             <div>
                 <Head>
                     <title>Reddit Page</title>
                 </Head>
-                <Layout>
-                    <CategorySlides />
+                <Layout selectedCategory={selectedCategory} fetchCategoryData={this.fetchCategoryData}>
+                    <CategorySlides categoryData={categoryData} loader={loader} />
                 </Layout>
             </div>
         )
     }
 }
-export default connect()(RedditPage)
+
+const mapStateToProps = state => ({
+    categoryData: state.categoryData.categoryData,
+    loader: state.categoryData.loader,
+    selectedCategory: state.categoryData.selectedCategory,
+});
+
+const mapDispatchToProps = dispatch => {
+    return {
+        fetchCategory: (key) => dispatch(fetchRedditData(key)),
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(RedditPage)
