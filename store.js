@@ -4,9 +4,7 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 
 import rootReducer from './src/reducers';
 
-const initialState = {};
-
-export const initializeStore = (initialState = initialState) =>
+export const initializeStore = (initialState = {}) =>
     createStore(
         rootReducer,
         initialState,
